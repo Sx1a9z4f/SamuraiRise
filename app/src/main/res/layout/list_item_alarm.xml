@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tool="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="112dp"
+    android:background="@color/mainBack"
+    android:orientation="horizontal">
+    <LinearLayout
+        android:layout_width="360dp"
+        android:layout_height="112dp"
+        android:orientation="vertical"
+        android:paddingTop="16dp"
+        android:paddingStart="16dp"
+        >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/textColorMain"
+        android:textSize="40sp"
+        tool:text="14:54" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        tool:text="пн ср пт | включен"
+        android:textSize="18sp"
+        android:textColor="@color/textColorMain"/>
+    </LinearLayout>
+    <androidx.appcompat.widget.SwitchCompat
+        android:layout_gravity="center_vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
