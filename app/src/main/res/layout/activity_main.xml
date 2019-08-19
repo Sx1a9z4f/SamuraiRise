@@ -1,19 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    android:background="@color/mainBack"
     android:orientation="vertical"
-    android:background="@color/mainBack">
+    tools:context=".MainActivity">
 
-<androidx.recyclerview.widget.RecyclerView
-    android:id="@+id/recyclerAlarm"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-
-</androidx.recyclerview.widget.RecyclerView>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerAlarm"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:listitem="@layout/list_item_alarm"/>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_gravity="end|bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:src="@drawable/ic_add_black_24dp"/>
 
 </FrameLayout>
