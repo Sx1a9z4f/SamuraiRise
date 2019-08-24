@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">SamuraiRise</string>
+    <string name="repeat">Повтор</string>
+    <string name="melody">Мелодия</string>
+    <string name="vibrate_on_signal">Вибрировать при сигнале</string>
+    <string name="delete_after_triggering">Удалить после срабатывания</string>
+    <string name="description">Описание</string>
+    
+    <string-array name="repeat_state">
+        <item name="once">Однократно</item>
+        <item name="daily">Ежедневно</item>
+        <item name="on_weekdays">По будням</item>
+        <item name="choose_days">Выбрать дни</item>
+    </string-array>
 </resources>
