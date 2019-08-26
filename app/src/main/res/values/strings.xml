@@ -5,7 +5,9 @@
     <string name="vibrate_on_signal">Вибрировать при сигнале</string>
     <string name="delete_after_triggering">Удалить после срабатывания</string>
     <string name="description">Описание</string>
-    
+    <string name="melody_def">Мелодия по  умолчанию</string>
+    <string name="alarm">Будильник</string>
+
     <string-array name="repeat_state">
         <item name="once">Однократно</item>
         <item name="daily">Ежедневно</item>
