@@ -1,5 +1,6 @@
 package com.OverSadBoy.samurairise;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,20 +15,30 @@ import java.util.List;
 public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
 
     private List<Item> data = new ArrayList<>();
+    private DataBase db ;
 
-     ItemAdapter() {
+    ItemAdapter(Context context) {
+        db = new DataBase(context);
+        loadData();
         createData();
+        notifyDataSetChanged();
     }
+
 
     private void createData() {
-        data.add(new Item("15:00", "пн", "включен"));
-        data.add(new Item("11:22", "ср пт", "включен"));
-        data.add(new Item("8:30", "чт", "выключен"));
+
+        db.addAlarms(new Item(0, "15:00", "пн", "включен"));
 
     }
 
-    public void setData(List<Item> data) {
-        this.data = data;
+    private void loadData() {
+        data = db.getAllAlarms();
+    }
+
+
+    public void addData(Item item) {
+        db.addAlarms(item);
+        notifyDataSetChanged();
     }
 
     @NonNull

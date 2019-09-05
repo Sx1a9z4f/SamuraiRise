@@ -18,10 +18,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //TODO СОЗДАТЬ СТРОКОВЫЕ РЕСУРСЫ ДЛЯ ЭЛЕМЕНТОВ
         recyclerView = findViewById(R.id.recyclerAlarm);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter(new ItemAdapter());
+        recyclerView.setAdapter(new ItemAdapter(this));
         fab = findViewById(R.id.fab);
         fab.setOnClickListener(v -> {
             Intent intent = new Intent(this, ActivityAdd.class);

@@ -2,14 +2,24 @@ package com.OverSadBoy.samurairise;
 
 public class Item {
 
+    private int id;
     private String time;
     private String repeat;
     private String status;
 
-    public Item(String time, String repeat, String status) {
+    public Item(int id,String time, String repeat, String status) {
+        this.id = id;
         this.time = time;
         this.repeat = repeat;
         this.status = status;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getTime() {

@@ -5,12 +5,39 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/mainBack">
+   <FrameLayout
+       android:layout_width="match_parent"
+       android:layout_height="?android:actionBarSize"
+       android:paddingStart="16dp"
+       android:paddingEnd="16dp">
+       <ImageButton
+           android:id="@+id/close_btn_add"
+           android:src="@drawable/ic_close"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:background="@color/mainBack"
+           android:layout_gravity="start|center_vertical"/>
+           <TextView
+               android:text="@string/new_alarm"
+               android:textColor="@color/textColorMain"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_gravity="center"/>
+       <ImageButton
+           android:id="@+id/done_btn_add"
+           android:background="@color/mainBack"
+           android:src="@drawable/ic_done"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_gravity="end|center_vertical"/>
+   </FrameLayout>
 
     <TimePicker
         android:id="@+id/timePicker"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:timePickerMode="spinner"
+
         android:numbersTextColor="@color/textColorMain"/>
 
     <TextView
@@ -134,4 +161,3 @@
 
 </LinearLayout>
 
-<TextView

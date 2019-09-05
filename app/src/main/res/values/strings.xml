@@ -7,6 +7,8 @@
     <string name="description">Описание</string>
     <string name="melody_def">Мелодия по  умолчанию</string>
     <string name="alarm">Будильник</string>
+    <string name="done">Done</string>
+    <string name="new_alarm">Новый будильник</string>
 
     <string-array name="repeat_state">
         <item name="once">Однократно</item>
