@@ -6,7 +6,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -32,7 +31,9 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
     }
 
     private void loadData() {
+
         data = db.getAllAlarms();
+        notifyDataSetChanged();
     }
 
 
@@ -41,14 +42,13 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
         notifyDataSetChanged();
     }
 
-    @NonNull
     @Override
-    public ItemAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ItemAdapter.ViewHolder onCreateViewHolder( ViewGroup parent, int viewType) {
         return new ItemAdapter.ViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item_alarm, parent, false));
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ItemAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(ItemAdapter.ViewHolder holder, int position) {
         holder.bind(data.get(position));
     }
 
@@ -62,7 +62,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
         private final TextView timeAlarm;
         private final TextView settingsAlarm;
 
-        ViewHolder(@NonNull View itemView) {
+        ViewHolder(View itemView) {
             super(itemView);
             timeAlarm = itemView.findViewById(R.id.timeAlarm);
             settingsAlarm = itemView.findViewById(R.id.settingsAlarm);

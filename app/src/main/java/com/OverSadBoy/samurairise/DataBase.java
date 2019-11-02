@@ -6,8 +6,6 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import androidx.annotation.Nullable;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,7 +19,7 @@ public class DataBase extends SQLiteOpenHelper implements IDataBase {
     private static final String KEY_REPEAT = "repeat";
     private static final String KEY_STATUS = "status";
 
-    public DataBase(@Nullable Context context) {
+    public DataBase(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 

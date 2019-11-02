@@ -6,6 +6,14 @@
         <item name="colorPrimary">@color/mainBack</item>
         <item name="colorPrimaryDark">@color/mainBack</item>
         <item name="colorAccent">@color/secondary</item>
+        <item name="android:textColorPrimary">@color/gray</item>
+    </style>
+
+    <style name="spinnerTheme">
+        <item name="android:textColorPrimary">@color/gray</item>
+    </style>
+    <style name="TimePickerTheme">
+        <item name="android:textSize">24sp</item>
         <item name="android:textColorPrimary">@color/textColorMain</item>
     </style>
 
