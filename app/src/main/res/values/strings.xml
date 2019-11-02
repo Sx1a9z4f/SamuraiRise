@@ -16,4 +16,13 @@
         <item name="on_weekdays">По будням</item>
         <item name="choose_days">Выбрать дни</item>
     </string-array>
+    <string-array name="repeat_state_day">
+        <item name="monday">понедельник</item>
+        <item name="tuesday">вторник</item>
+        <item name="wednesday">среда</item>
+        <item name="thursday">четверг</item>
+        <item name="friday">пятница</item>
+        <item name="saturday">суббота</item>
+        <item name="sunday">воскресенье</item>
+    </string-array>
 </resources>

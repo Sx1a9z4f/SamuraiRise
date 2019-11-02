@@ -6,6 +6,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.widget.SwitchCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -14,24 +16,14 @@ import java.util.List;
 public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
 
     private List<Item> data = new ArrayList<>();
-    private DataBase db ;
+    private DataBase db;
 
     ItemAdapter(Context context) {
         db = new DataBase(context);
         loadData();
-        createData();
-        notifyDataSetChanged();
-    }
-
-
-    private void createData() {
-
-        db.addAlarms(new Item(0, "15:00", "пн", "включен"));
-
     }
 
     private void loadData() {
-
         data = db.getAllAlarms();
         notifyDataSetChanged();
     }
@@ -39,11 +31,29 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
 
     public void addData(Item item) {
         db.addAlarms(item);
+        data.add(item);
         notifyDataSetChanged();
     }
 
+    public void updateStatus(Item item, boolean status) {
+        String str = "выключен";
+        if (status)
+            str = "включен";
+        item.setStatus(str);
+        db.updateAlarms(item);
+        loadData();
+    }
+
+    public void deleteData(Item item) {
+        data.remove(item.getId());
+        db.deleteAlarm(item);
+        notifyDataSetChanged();
+    }
+
+
+    @NonNull
     @Override
-    public ItemAdapter.ViewHolder onCreateViewHolder( ViewGroup parent, int viewType) {
+    public ItemAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         return new ItemAdapter.ViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item_alarm, parent, false));
     }
 
@@ -57,20 +67,28 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
         return data.size();
     }
 
-    static class ViewHolder extends RecyclerView.ViewHolder {
+    class ViewHolder extends RecyclerView.ViewHolder {
 
         private final TextView timeAlarm;
         private final TextView settingsAlarm;
+        private final SwitchCompat switchCompat;
 
         ViewHolder(View itemView) {
             super(itemView);
             timeAlarm = itemView.findViewById(R.id.timeAlarm);
             settingsAlarm = itemView.findViewById(R.id.settingsAlarm);
+            switchCompat = itemView.findViewById(R.id.statusAlarm);
         }
 
         void bind(Item item) {
             timeAlarm.setText(item.getTime());
-            settingsAlarm.setText(item.getRepeat() + " | " + item.getStatus());
+            settingsAlarm.setText(String.format("" +
+                    "%s | %s", item.getRepeat(), item.getStatus()));
+            switchCompat.setChecked(item.getStatus().equals("включен"));
+            switchCompat.setOnCheckedChangeListener((compoundButton, b) -> {
+                updateStatus(item, switchCompat.isChecked());
+            });
+
         }
     }
 }
