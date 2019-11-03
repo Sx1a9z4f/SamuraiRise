@@ -35,7 +35,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
         notifyDataSetChanged();
     }
 
-    public void updateStatus(Item item, boolean status) {
+    private void updateStatus(Item item, boolean status) {
         String str = "выключен";
         if (status)
             str = "включен";
@@ -85,9 +85,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
             settingsAlarm.setText(String.format("" +
                     "%s | %s", item.getRepeat(), item.getStatus()));
             switchCompat.setChecked(item.getStatus().equals("включен"));
-            switchCompat.setOnCheckedChangeListener((compoundButton, b) -> {
-                updateStatus(item, switchCompat.isChecked());
-            });
+            switchCompat.setOnCheckedChangeListener((compoundButton, b) -> updateStatus(item, switchCompat.isChecked()));
 
         }
     }

@@ -1,5 +1,6 @@
 package com.OverSadBoy.samurairise;
 
+import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -53,7 +54,7 @@ public class DataBase extends SQLiteOpenHelper implements IDataBase {
     public Item getAlarm(int id) {
         SQLiteDatabase db = this.getReadableDatabase();
 
-        Cursor cursor = db.query(TABLE_ALARMS,
+        @SuppressLint("Recycle") Cursor cursor = db.query(TABLE_ALARMS,
                 new String[]{KEY_ID, KEY_TIME, KEY_REPEAT, KEY_STATUS},
                 KEY_ID + "=?",
                 new String[]{String.valueOf(id)},
@@ -63,6 +64,7 @@ public class DataBase extends SQLiteOpenHelper implements IDataBase {
             cursor.moveToFirst();
         }
 
+        assert cursor != null;
         return new Item(Integer.parseInt(cursor.getString(0)), cursor.getString(1), cursor.getString(2), cursor.getString(3));
 
     }
@@ -72,7 +74,7 @@ public class DataBase extends SQLiteOpenHelper implements IDataBase {
         List<Item> alarmList = new ArrayList<>();
         String selectQuery = "SELECT * FROM " + TABLE_ALARMS;
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor cursor = db.rawQuery(selectQuery, null);
+        @SuppressLint("Recycle") Cursor cursor = db.rawQuery(selectQuery, null);
         if (cursor.moveToFirst()) {
             do {
                 alarmList.add(new Item(Integer.parseInt(cursor.getString(0)), cursor.getString(1),
