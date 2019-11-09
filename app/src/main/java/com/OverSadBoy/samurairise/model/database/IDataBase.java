@@ -1,4 +1,4 @@
-package com.OverSadBoy.samurairise;
+package com.OverSadBoy.samurairise.model.database;
 
 import java.util.List;
 

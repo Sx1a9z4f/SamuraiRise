@@ -1,4 +1,4 @@
-package com.OverSadBoy.samurairise;
+package com.OverSadBoy.samurairise.view;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -7,6 +7,9 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TimePicker;
+
+import com.OverSadBoy.samurairise.R;
+import com.OverSadBoy.samurairise.model.database.Item;
 
 
 public class ActivityAdd extends Activity {

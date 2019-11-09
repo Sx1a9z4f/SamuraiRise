@@ -1,4 +1,4 @@
-package com.OverSadBoy.samurairise;
+package com.OverSadBoy.samurairise.model.database;
 
 import android.annotation.SuppressLint;
 import android.content.ContentValues;

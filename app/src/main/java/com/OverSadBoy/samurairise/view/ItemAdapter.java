@@ -1,4 +1,4 @@
-package com.OverSadBoy.samurairise;
+package com.OverSadBoy.samurairise.view;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,6 +9,10 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.SwitchCompat;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.OverSadBoy.samurairise.R;
+import com.OverSadBoy.samurairise.model.database.DataBase;
+import com.OverSadBoy.samurairise.model.database.Item;
 
 import java.util.ArrayList;
 import java.util.List;
