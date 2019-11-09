@@ -10,6 +10,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.OverSadBoy.samurairise.R;
 import com.OverSadBoy.samurairise.dagger.App;
+import com.OverSadBoy.samurairise.dagger.ContextModule;
+import com.OverSadBoy.samurairise.dagger.DaggerPresenterComponent;
 import com.OverSadBoy.samurairise.model.database.Item;
 import com.OverSadBoy.samurairise.presenter.PresenterContract;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -25,11 +27,13 @@ public class MainActivity extends AppCompatActivity implements ViewContract{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//        presenter = App.getComponent().getPresenter();
+        presenter = DaggerPresenterComponent.builder().contextModule(new ContextModule(this)).build().getPresenter();
         itemAdapter = new ItemAdapter(this);
+
         RecyclerView recyclerView = findViewById(R.id.recyclerAlarm);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(itemAdapter);
+
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(v -> {
             Intent intent = new Intent(this, ActivityAdd.class);
