@@ -2,6 +2,8 @@ package com.OverSadBoy.samurairise.view;
 
 import com.OverSadBoy.samurairise.model.database.Item;
 
+import java.util.ArrayList;
+
 public interface ViewContract {
     void addAlarm(Item item);
 
@@ -9,5 +11,7 @@ public interface ViewContract {
 
     void updateStatus(Item item, boolean status);
 
-    void loadData();
+    ArrayList<Item> loadData();
+
+    void startActivityAdd();
 }

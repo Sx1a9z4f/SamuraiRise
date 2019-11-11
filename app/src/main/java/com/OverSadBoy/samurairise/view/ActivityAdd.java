@@ -29,12 +29,11 @@ public class ActivityAdd extends Activity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         repeatState.setAdapter(adapter);
 
-        ItemAdapter itemAdapter = new ItemAdapter(this);
         timePicker = findViewById(R.id.timePicker);
 
         ImageButton btnDone = findViewById(R.id.done_btn_add);
         btnDone.setOnClickListener(v -> {
-            Item item = new Item(itemAdapter.getItemCount(), generateTime(), repeatState.getSelectedItem().toString(), "включен");
+            Item item = new Item(1, generateTime(), repeatState.getSelectedItem().toString(), "включен");
             Intent intent = new Intent();
             intent.putExtra("item", item);
             setResult(RESULT_OK, intent);

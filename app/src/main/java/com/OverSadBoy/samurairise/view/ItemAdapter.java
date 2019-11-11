@@ -19,24 +19,20 @@ import java.util.List;
 
 public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
 
-    private List<Item> data = new ArrayList<>();
-    private DataBase db;
+    private List<Item> data;
 
-    ItemAdapter(Context context) {
-        db = new DataBase(context);
-        loadData();
-    }
-
-    private void loadData() {
-        data = db.getAllAlarms();
+    ItemAdapter(ArrayList<Item> alarms) {
+        data = alarms;
         notifyDataSetChanged();
     }
-
 
     public void addData(Item item) {
-        db.addAlarms(item);
         data.add(item);
         notifyDataSetChanged();
+    }
+
+    public int getAlarmsCount(){
+        return data.size();
     }
 
     private void updateStatus(Item item, boolean status) {
@@ -44,13 +40,11 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
         if (status)
             str = "включен";
         item.setStatus(str);
-        db.updateAlarms(item);
-        loadData();
+        notifyDataSetChanged();
     }
 
     public void deleteData(Item item) {
         data.remove(item.getId());
-        db.deleteAlarm(item);
         notifyDataSetChanged();
     }
 

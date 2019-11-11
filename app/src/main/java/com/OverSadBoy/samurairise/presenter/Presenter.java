@@ -4,6 +4,8 @@ import com.OverSadBoy.samurairise.model.ModelContract;
 import com.OverSadBoy.samurairise.model.database.Item;
 import com.OverSadBoy.samurairise.view.ViewContract;
 
+import java.util.ArrayList;
+
 public class Presenter implements PresenterContract {
 
     private ViewContract view;
@@ -24,8 +26,13 @@ public class Presenter implements PresenterContract {
     }
 
     @Override
-    public void add(Item item) {
+    public void addAlarm(Item item) {
         model.addAlarm(item);
+    }
+
+    @Override
+    public ArrayList<Item> getAlarms() {
+        return model.getAlarms();
     }
 
     @Override
@@ -36,6 +43,11 @@ public class Presenter implements PresenterContract {
     @Override
     public void onLongClick() {
 
+    }
+
+    @Override
+    public void addClick() {
+        view.startActivityAdd();
     }
 
     @Override

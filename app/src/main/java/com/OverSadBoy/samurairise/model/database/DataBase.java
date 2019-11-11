@@ -70,8 +70,8 @@ public class DataBase extends SQLiteOpenHelper implements IDataBase {
     }
 
     @Override
-    public List<Item> getAllAlarms() {
-        List<Item> alarmList = new ArrayList<>();
+    public ArrayList<Item> getAllAlarms() {
+        ArrayList<Item> alarmList = new ArrayList<>();
         String selectQuery = "SELECT * FROM " + TABLE_ALARMS;
         SQLiteDatabase db = this.getWritableDatabase();
         @SuppressLint("Recycle") Cursor cursor = db.rawQuery(selectQuery, null);
