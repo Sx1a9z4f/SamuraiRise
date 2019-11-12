@@ -7,6 +7,6 @@ import java.util.ArrayList;
 public interface ModelContract {
 
     void addAlarm(Item item);
-    void deleteAlarm(Item item);
+    void deleteAlarm(int id);
     ArrayList<Item> getAlarms();
 }

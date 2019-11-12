@@ -51,7 +51,7 @@ public class Presenter implements PresenterContract {
     }
 
     @Override
-    public void deleteClick(Item item) {
-        model.deleteAlarm(item);
+    public void deleteClick(int id) {
+        model.deleteAlarm(id);
     }
 }

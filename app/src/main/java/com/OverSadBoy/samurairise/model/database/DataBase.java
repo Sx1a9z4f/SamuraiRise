@@ -109,9 +109,9 @@ public class DataBase extends SQLiteOpenHelper implements IDataBase {
     }
 
     @Override
-    public void deleteAlarm(Item item) {
+    public void deleteAlarm(int id) {
         SQLiteDatabase db = this.getWritableDatabase();
-        db.delete(TABLE_ALARMS, KEY_ID + " = ?", new String[]{String.valueOf(item.getId())});
+        db.delete(TABLE_ALARMS, KEY_ID + " = ?", new String[]{String.valueOf(id)});
         db.close();
     }
 

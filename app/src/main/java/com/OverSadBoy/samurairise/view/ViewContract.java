@@ -9,8 +9,6 @@ public interface ViewContract {
 
     void deleteAlarm(Item item);
 
-    void updateStatus(Item item, boolean status);
-
     ArrayList<Item> loadData();
 
     void startActivityAdd();

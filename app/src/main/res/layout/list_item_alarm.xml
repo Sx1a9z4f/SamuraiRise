@@ -3,7 +3,7 @@
     xmlns:tool="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="112dp"
-    android:background="@color/mainBack"
+    android:background="@drawable/item_selecte"
     android:orientation="horizontal">
 
     <LinearLayout

@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@color/mainBack"
     android:orientation="vertical"
-    tools:context=".view.MainActivity">
+    tools:context=".view.activity.MainActivity">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerAlarm"

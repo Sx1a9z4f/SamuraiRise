@@ -13,5 +13,5 @@ public interface PresenterContract {
     void onClickSwitch();
     void onLongClick();
     void addClick();
-    void deleteClick(Item item);
+    void deleteClick(int id);
 }

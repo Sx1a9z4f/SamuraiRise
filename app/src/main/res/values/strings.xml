@@ -9,6 +9,8 @@
     <string name="alarm">Будильник</string>
     <string name="done">Done</string>
     <string name="new_alarm">Новый будильник</string>
+    <string name="delete">Удалить?</string>
+    <string name="you_sure">Вы уверены?</string>
 
     <string-array name="repeat_state">
         <item name="once">Однократно</item>

@@ -20,8 +20,8 @@ public class Model implements ModelContract {
     }
 
     @Override
-    public void deleteAlarm(Item item) {
-        dataBase.deleteAlarm(item);
+    public void deleteAlarm(int id) {
+        dataBase.deleteAlarm(id);
     }
 
     @Override

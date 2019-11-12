@@ -8,6 +8,6 @@ public interface IDataBase {
     List<Item> getAllAlarms();
     int getAlarmsCount();
     int updateAlarms(Item item);
-    void deleteAlarm(Item item);
+    void deleteAlarm(int id);
     void deleteAll();
 }

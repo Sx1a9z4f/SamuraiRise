@@ -1,4 +1,4 @@
-package com.OverSadBoy.samurairise.view;
+package com.OverSadBoy.samurairise.view.activity;
 
 import android.app.Activity;
 import android.content.Intent;
