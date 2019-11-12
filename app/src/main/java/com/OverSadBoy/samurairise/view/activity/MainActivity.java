@@ -65,7 +65,6 @@ public class MainActivity extends AppCompatActivity implements ViewContract {
 
     @Override
     public void addAlarm(Item item) {
-        item.setId(itemAdapter.getAlarmsCount());
         presenter.addAlarm(item);
         itemAdapter.addData(item);
     }

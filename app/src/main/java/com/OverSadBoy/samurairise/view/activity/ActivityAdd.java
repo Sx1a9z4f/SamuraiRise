@@ -33,7 +33,7 @@ public class ActivityAdd extends Activity {
 
         ImageButton btnDone = findViewById(R.id.done_btn_add);
         btnDone.setOnClickListener(v -> {
-            Item item = new Item(1, generateTime(), repeatState.getSelectedItem().toString(), "включен");
+            Item item = new Item(Integer.parseInt(timePicker.getCurrentHour()+""+timePicker.getCurrentMinute()), generateTime(), repeatState.getSelectedItem().toString(), "включен");
             Intent intent = new Intent();
             intent.putExtra("item", item);
             setResult(RESULT_OK, intent);
