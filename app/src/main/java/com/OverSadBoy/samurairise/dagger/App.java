@@ -12,7 +12,7 @@ public class App extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        component = DaggerPresenterComponent.builder().build();
+        component = DaggerPresenterComponent.builder().contextModule(new ContextModule(this)).build();
     }
 
 }

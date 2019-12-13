@@ -3,8 +3,13 @@ package com.OverSadBoy.samurairise.model.database;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+@Entity
 public class Item implements Parcelable {
 
+    @PrimaryKey
     private int id;
     private String time;
     private String repeat;
@@ -69,6 +74,7 @@ public class Item implements Parcelable {
         parcel.writeString(repeat);
         parcel.writeString(status);
     }
+
     public static final Creator<Item> CREATOR = new Creator<Item>() {
         @Override
         public Item createFromParcel(Parcel in) {

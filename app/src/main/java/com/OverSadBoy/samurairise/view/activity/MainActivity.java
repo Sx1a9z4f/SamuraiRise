@@ -13,8 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.OverSadBoy.samurairise.R;
-import com.OverSadBoy.samurairise.dagger.ContextModule;
-import com.OverSadBoy.samurairise.dagger.DaggerPresenterComponent;
+import com.OverSadBoy.samurairise.dagger.App;
 import com.OverSadBoy.samurairise.model.database.Item;
 import com.OverSadBoy.samurairise.presenter.PresenterContract;
 import com.OverSadBoy.samurairise.view.ViewContract;
@@ -22,7 +21,7 @@ import com.OverSadBoy.samurairise.view.dialog.DialogFragmentConfirm;
 import com.OverSadBoy.samurairise.view.dialog.DialogListener;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity implements ViewContract {
@@ -36,7 +35,8 @@ public class MainActivity extends AppCompatActivity implements ViewContract {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        presenter = DaggerPresenterComponent.builder().contextModule(new ContextModule(this)).build().getPresenter();
+        //presenter = DaggerPresenterComponent.builder().contextModule(new ContextModule(this)).build().getPresenter();
+       presenter  = App.getComponent().getPresenter();
         presenter.attachView(this);
         itemAdapter = new ItemAdapter(presenter.getAlarms());
         itemAdapter.setListener(new AdapterListener());
@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity implements ViewContract {
     }
 
     @Override
-    public ArrayList<Item> loadData() {
+    public List<Item> loadData() {
         return presenter.getAlarms();
     }
 

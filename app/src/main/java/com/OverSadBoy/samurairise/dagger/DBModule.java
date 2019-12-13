@@ -2,9 +2,10 @@ package com.OverSadBoy.samurairise.dagger;
 
 import android.content.Context;
 
-import com.OverSadBoy.samurairise.model.database.DataBase;
+import androidx.room.Database;
+import androidx.room.Room;
 
-import javax.inject.Inject;
+import com.OverSadBoy.samurairise.model.database.DataBase;
 
 import dagger.Module;
 import dagger.Provides;
@@ -13,7 +14,7 @@ import dagger.Provides;
 public class DBModule {
 
     @Provides
-    DataBase provideDB(Context context){
-        return new DataBase(context);
+    DataBase provideDB(Context context) {
+        return Room.databaseBuilder(context, DataBase.class, "alarm").build();
     }
 }

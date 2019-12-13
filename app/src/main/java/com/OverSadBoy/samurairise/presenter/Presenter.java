@@ -4,7 +4,7 @@ import com.OverSadBoy.samurairise.model.ModelContract;
 import com.OverSadBoy.samurairise.model.database.Item;
 import com.OverSadBoy.samurairise.view.ViewContract;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class Presenter implements PresenterContract {
 
@@ -31,7 +31,7 @@ public class Presenter implements PresenterContract {
     }
 
     @Override
-    public ArrayList<Item> getAlarms() {
+    public List<Item> getAlarms() {
         return model.getAlarms();
     }
 

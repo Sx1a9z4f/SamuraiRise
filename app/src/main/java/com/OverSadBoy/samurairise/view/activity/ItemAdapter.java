@@ -21,7 +21,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
     private List<Item> data;
     private ItemsAdapterListener listener = null;
 
-    ItemAdapter(ArrayList<Item> alarms) {
+    ItemAdapter(List<Item> alarms) {
         data = alarms;
         notifyDataSetChanged();
     }

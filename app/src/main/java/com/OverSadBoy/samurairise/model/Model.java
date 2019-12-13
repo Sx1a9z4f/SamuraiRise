@@ -4,7 +4,7 @@ package com.OverSadBoy.samurairise.model;
 import com.OverSadBoy.samurairise.model.database.DataBase;
 import com.OverSadBoy.samurairise.model.database.Item;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class Model implements ModelContract {
 
@@ -16,16 +16,16 @@ public class Model implements ModelContract {
 
     @Override
     public void addAlarm(Item item) {
-        dataBase.addAlarms(item);
+        dataBase.itemDao().addAlarm(item);
     }
 
     @Override
     public void deleteAlarm(int id) {
-        dataBase.deleteAlarm(id);
+        dataBase.itemDao().deleteAlarm(id);
     }
 
     @Override
-    public ArrayList<Item> getAlarms() {
-        return dataBase.getAllAlarms();
+    public List<Item> getAlarms() {
+        return dataBase.itemDao().getAlarms();
     }
 }
