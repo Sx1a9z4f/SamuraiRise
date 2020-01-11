@@ -1,7 +1,7 @@
 package com.overSadBoy.samurairise.view.adapter
 
 import androidx.test.runner.AndroidJUnit4
-import com.overSadBoy.samurairise.model.database.Alarm
+import com.overSadBoy.samurairise.model.Alarm
 import org.junit.runner.RunWith
 
 interface ItemsAdapterListener {

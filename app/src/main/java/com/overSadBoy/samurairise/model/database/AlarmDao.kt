@@ -1,6 +1,7 @@
 package com.overSadBoy.samurairise.model.database
 
 import androidx.room.*
+import com.overSadBoy.samurairise.model.Alarm
 
 @Dao
 interface AlarmDao {
@@ -15,5 +16,5 @@ interface AlarmDao {
     fun update(list: List<Alarm>)
 
     @Query("SELECT * FROM Alarm")
-    fun getAlarms()
+    fun getAlarms(): List<Alarm>
 }

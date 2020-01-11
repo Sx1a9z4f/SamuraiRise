@@ -10,7 +10,7 @@ import androidx.appcompat.widget.SwitchCompat
 import androidx.recyclerview.widget.RecyclerView
 import androidx.test.runner.AndroidJUnit4
 import com.overSadBoy.samurairise.R
-import com.overSadBoy.samurairise.model.database.Alarm
+import com.overSadBoy.samurairise.model.Alarm
 import org.junit.runner.RunWith
 import java.util.*
 

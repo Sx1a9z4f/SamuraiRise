@@ -15,9 +15,8 @@ import androidx.test.runner.AndroidJUnit4
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.overSadBoy.samurairise.R
 import com.overSadBoy.samurairise.dagger.DaggerPresenterComponent
-import com.overSadBoy.samurairise.model.database.Alarm
+import com.overSadBoy.samurairise.model.Alarm
 import com.overSadBoy.samurairise.presenter.PresenterContract
-import com.overSadBoy.samurairise.view.ViewContract
 import com.overSadBoy.samurairise.view.activity.add.ActivityAdd
 import com.overSadBoy.samurairise.view.adapter.ItemAdapter
 import com.overSadBoy.samurairise.view.adapter.ItemsAdapterListener

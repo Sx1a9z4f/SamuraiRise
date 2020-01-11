@@ -1,4 +1,4 @@
-package com.overSadBoy.samurairise.model.database
+package com.overSadBoy.samurairise.model
 
 import android.os.Parcelable
 import androidx.room.Entity
@@ -9,9 +9,9 @@ import kotlinx.android.parcel.Parcelize
 @Parcelize
 @Entity
 data class Alarm(
-        @PrimaryKey
-        val id: Int,
+        @PrimaryKey(autoGenerate = true)
+        val id: Int? = null,
         val time: String?,
         val repeat: String?,
-        val status: String?
+        val status: Boolean
 ) : Parcelable
