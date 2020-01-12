@@ -45,7 +45,7 @@
         android:timePickerMode="spinner" />
 
     <TextView
-        android:id="@+id/timeToAct"
+        android:id="@+id/time_to_act"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -53,7 +53,7 @@
         tools:text="Через 23 ч 59 мин" />
 
     <FrameLayout
-        android:id="@+id/repeat_item_addact"
+        android:id="@+id/repeat_item_add"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:orientation="horizontal"

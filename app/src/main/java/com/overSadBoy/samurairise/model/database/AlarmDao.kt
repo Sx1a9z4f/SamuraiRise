@@ -7,14 +7,14 @@ import com.overSadBoy.samurairise.model.Alarm
 interface AlarmDao {
 
     @Insert
-    fun addAlarm(alarm: Alarm)
+    suspend fun addAlarm(alarm: Alarm)
 
     @Delete
-    fun deleteAlarm(alarm: Alarm)
+    suspend fun deleteAlarm(alarm: Alarm)
 
     @Update
-    fun update(list: List<Alarm>)
+    suspend fun update(list: List<Alarm>)
 
     @Query("SELECT * FROM Alarm")
-    fun getAlarms(): List<Alarm>
+    suspend fun getAlarms(): List<Alarm>
 }

@@ -13,12 +13,15 @@
     <string name="you_sure">Вы уверены?</string>
     <string name="remove">Remove</string>
 
+    <string name="time_to">Через %1$s ч %2$s мин</string>
+
     <string-array name="repeat_state">
         <item name="once">Однократно</item>
         <item name="daily">Ежедневно</item>
         <item name="on_weekdays">По будням</item>
         <item name="choose_days">Выбрать дни</item>
     </string-array>
+
     <string-array name="repeat_state_day">
         <item name="monday">понедельник</item>
         <item name="tuesday">вторник</item>

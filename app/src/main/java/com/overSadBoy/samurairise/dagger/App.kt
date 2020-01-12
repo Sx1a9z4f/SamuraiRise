@@ -2,6 +2,7 @@ package com.overSadBoy.samurairise.dagger
 
 import android.app.Application
 import com.overSadBoy.samurairise.dagger.component.AppComponent
+import com.overSadBoy.samurairise.dagger.component.DaggerAppComponent
 import com.overSadBoy.samurairise.dagger.module.AppModule
 
 class App : Application() {
